@@ -1,18 +1,71 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ErrorFede</title>
-<link rel="stylesheet" href="style.css"></head>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federica – The Multiverse Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<div class="player">
-<h3>DEDICATA A TE</h3>
-<p class="dedica">A chi riesce nell'impresa di essere complicata anche quando è immobile</p>
-<img class="cover" src="copertina.png" alt="Copertina">
-<h1>ErrorFede</h1>
-<h2>Yle&Vane</h2>
-<div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
-<input id="seek" type="range" min="0" max="100" value="0">
-<button id="play">▶</button>
-<audio id="audio" src="Error Fede.mp3"></audio>
-</div>
-<script src="script.js"></script>
-</body></html>
+  <main class="app">
+    <section id="home" class="screen active home">
+      <p class="eyebrow">Yle & Vane presentano</p>
+      <img src="album-cover.png" class="album-cover" alt="Copertina album" />
+      <h1>Federica</h1>
+      <h2>The Multiverse Edition</h2>
+      <p class="tagline">3 tracce. 3 versioni. Una sola Federica.</p>
+      <button class="primary" onclick="showScreen('tracklist')">▶ Entra nell'album</button>
+    </section>
+
+    <section id="tracklist" class="screen">
+      <button class="back" onclick="showScreen('home')">‹ Copertina</button>
+      <h1>Federica</h1>
+      <h2>The Multiverse Edition</h2>
+      <div class="tracks">
+        <article class="track" onclick="openTrack(0)">
+          <img src="error-cover.png" alt="">
+          <div><span>01</span><h3>ErrorFede</h3><p>A chi riesce nell'impresa di essere complicata anche quando è immobile.</p></div>
+          <button>▶</button>
+        </article>
+        <article class="track" onclick="openTrack(1)">
+          <img src="classic-cover.png" alt="">
+          <div><span>02</span><h3>ClassicFede</h3><p>Al nostro classico preferito: un concentrato di eleganza d'altri tempi e un sano disincanto moderno.</p></div>
+          <button>▶</button>
+        </article>
+        <article class="track" onclick="openTrack(2)">
+          <img src="dark-cover.png" alt="">
+          <div><span>03</span><h3>DarkFede</h3><p>Le persone imparano dai propri errori. Tu li hai trasformati in aneddoti memorabili.</p></div>
+          <button>▶</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="player" class="screen player-screen">
+      <button class="back" onclick="backToAlbum()">‹ Torna all'album</button>
+      <div class="player-card">
+        <img id="cover" class="cover" src="" alt="">
+        <p id="number" class="number"></p>
+        <h1 id="title"></h1>
+        <h2>Yle & Vane</h2>
+        <p id="dedication" class="dedication"></p>
+        <div class="times"><span id="current">0:00</span><span id="duration">0:00</span></div>
+        <input id="seek" type="range" min="0" max="100" value="0">
+        <div class="controls"><button onclick="prevTrack()">⏮</button><button id="play" class="play" onclick="togglePlay()">▶</button><button onclick="nextTrack()">⏭</button></div>
+      </div>
+      <audio id="audio"></audio>
+    </section>
+
+    <section id="finale" class="screen finale">
+      <img src="album-cover.png" class="final-cover" alt="">
+      <p>Questo album non lo troverai mai su Spotify.</p>
+      <p>È stato scritto soltanto per te.</p>
+      <p class="big">Perché, come sempre...</p>
+      <h1>sei la nostra fonte di ispirazione. ❤️</h1>
+      <p>Con affetto,<br><strong>Yle & Vane</strong></p>
+      <small>Ogni riferimento a persone realmente esistenti è puramente intenzionale.</small>
+      <button class="primary" onclick="restartAlbum()">↻ Riascolta l'album</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
