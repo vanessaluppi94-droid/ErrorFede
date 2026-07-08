@@ -1,0 +1,6 @@
+body{margin:0;background:#121212;color:#fff;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.player{max-width:420px;width:92%;text-align:center}
+.cover{width:100%;border-radius:18px;box-shadow:0 10px 30px #000}
+h1{margin:16px 0 4px;font-size:42px}h2{margin:0 0 16px;color:#bbb;font-weight:400}
+.dedica{color:#ddd}.time{display:flex;justify-content:space-between;font-size:14px}
+#seek{width:100%}button{margin-top:18px;width:90px;height:90px;border-radius:50%;border:none;background:#1db954;color:#fff;font-size:38px;cursor:pointer}
